@@ -9,7 +9,7 @@
             <aside id="featured" class="body">
                 <article>
                     <h1 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}">{{ article.title }}</a></h1> 
-                    {% include 'article_infos.html' %}{{ article.content }}{% include 'comments.html' %}
+                    {% include 'article_infos.html' %}{{ article.content }}<p>{% include 'comments.html' %}</p>
                 </article>
                 {% if loop.length == 1 %}
                     {% include 'pagination.html' %}
@@ -33,9 +33,13 @@
                 </header>
                 <div class="entry-content">
                 {% include 'article_infos.html' %}
-                <div class="slug">{{ article.summary }}</div>
-                <a class="readmore" href="{{ SITEURL }}/{{ article.url }}">read more</a>
-                {% include 'comments.html' %}
+                <div class="slug">
+                    {{ article.summary }}
+                    <p>
+                        {% include 'comments.html' %}
+                        <a class="readmore" href="{{ SITEURL }}/{{ article.url }}">read more</a>
+                    </p>
+                </div>
                 </div><!-- /.entry-content -->
             </article></li>
         {% endif %}
