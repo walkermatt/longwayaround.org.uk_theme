@@ -32,8 +32,8 @@
                         <h1><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title}}">{{ article.title }}</a></h1>
                 </header>
                 <div class="entry-content">
-                {% include 'article_infos.html' %}
                 <div class="slug">
+                    {% include 'article_infos.html' %}
                     {{ article.summary }}
                     <p>
                         {% include 'comments.html' %}
