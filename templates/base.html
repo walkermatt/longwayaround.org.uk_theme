@@ -24,6 +24,7 @@
 <body id="index" class="home">
 {% include 'github.html' %}
         <header id="banner" class="body">
+                {% if RELATIVE_URLS %}<p><em>Warning using RELATIVE_URLS, disable RELATIVE_URLS &amp; re-build before uploading!</em></p> {% endif %}
                 <h1><a href="/">{{ SITENAME }} {% if SITESUBTITLE %} <strong>{{ SITESUBTITLE }}</strong>{% endif %}</a></h1>
                 <nav>
                 <ul>
