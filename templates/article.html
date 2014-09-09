@@ -1,18 +1,18 @@
 {% extends "base.html" %}
 {% block title %}{{ article.title }}{% endblock %}
-{% block content %}        
-<section id="content" class="body">    
+{% block content %}
+<section id="content" class="body">
 <article>
+        <abbr class="published" title="{{ article.date.isoformat() }}">{{ article.locale_date }}</abbr>
         <header> <h1 class="entry-title"><a href="{{ pagename }}"
         rel="bookmark" title="Permalink to {{ article.title }}">{{ article.title
         }}</a></h1> {% include 'twitter.html' %} </header>
         <div class="entry-content">
-        {% include 'article_infos.html' %}
         {{ article.content }}
+        {% include 'article_infos.html' %}
         </div><!-- /.entry-content -->
         {% if DISQUS_SITENAME %}
         <div class="comments">
-        <!-- <h2>Comments !</h2> -->
             <div id="disqus_thread"></div>
             <script type="text/javascript">
                // Don't set the identifier so that comments are
@@ -30,10 +30,10 @@
 </article>
 </section>
 <section id="content" class="body">
-<h1>Articles</h1>
+<h1>Posts</h1>
 <ul>
 {% for article in dates %}
-    <li><a href='../../{{ article.url }}'>{{ article.title }}</a></li>
+    <li><a href='../../{{ article.url }}'>{{ article.title }}</a> - <abbr class="published" title="{{ article.date.isoformat() }}">{{ article.locale_date }}</abbr></li>
 {% endfor %}
 </ul>
 </section>
