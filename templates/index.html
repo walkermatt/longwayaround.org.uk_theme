@@ -50,12 +50,12 @@
            or not articles_page.has_previous() and loop.length > 1) %}
             {% include 'pagination.html' %}
         {% endif %}
-{% endfor %}
     {% if loop.length > 1 or articles_page.has_previous() %}
+    {% endif %}
+{% endfor %}
     </ol><!-- /#posts-list -->
-    </section><!-- /#content -->
-{% endif %}
 {% else %}
+    </section><!-- /#content -->
 <section id="content" class="body">    
 <h2>Pages</h2>
 {% for page in PAGES %}
